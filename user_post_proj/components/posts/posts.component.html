@@ -1,0 +1,15 @@
+<!-- [] is input and () is output. the value in the () is the output -->
+<app-post-form [currentPost]="currentPost" [isEdit]="isEdit" (newPost)="onNewPost($event)" (updatedPost)="onUpdatedPost($event)"></app-post-form>
+<h2>Posts</h2>
+<div class="card" *ngFor="let post of posts">
+  <div class="card-body">
+    <!-- when h3 is clicked you go to the post.component.html where the get post service is called 
+         from ngOnInit() and the post is fetched from the api -->
+    <h3><a routerLink="/post/{{ post.id }}">{{ post.title }}</a></h3>
+    <p>{{ post.body }}</p>
+    <hr>
+    <button (click)="removePost(post)" class="btn btn-danger"><i class="fa fa-remove"></i></button>
+
+    <button (click)="editPost(post)" class="btn btn-light"><i class="fa fa-pencil"></i></button>
+  </div>
+</div>
