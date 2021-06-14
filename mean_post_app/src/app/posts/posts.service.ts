@@ -22,6 +22,8 @@ export class PostsService {
   // this function doesnt return anything it just updates "postsUpdated"
   // "getPostUpdateListener()" is whats called from the component that wants
   // to get the posts as well as "getPosts"
+      // "subscribing" from here bc the component which calls this method doesnt expect
+      // to get something in return to display on its ui
   getPosts(postsPerPage: number, currentPage: number) {
     const queryParams = `?pagesize=${postsPerPage}&page=${currentPage}`;
     this.http
@@ -90,6 +92,9 @@ export class PostsService {
       });
   }
 
+  // "subscribing" from here bc the component which calls this method doesnt expect
+  // to get something in return to display on its ui
+  // a simple message is returned from the backend
   updatePost(id: string, title: string, content: string, image: File | string) {
     let postData: Post | FormData;
     if (typeof image === "object") {
