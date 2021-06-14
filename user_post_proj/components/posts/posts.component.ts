@@ -25,6 +25,8 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  // so when this component is notified by "post-form"
+  // do this
   onNewPost(post: Post) {
     this.posts.unshift(post);
   }
