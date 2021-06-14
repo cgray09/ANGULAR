@@ -19,6 +19,9 @@ export class PostsService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  // this function doesnt return anything it just updates "postsUpdated"
+  // "getPostUpdateListener()" is whats called from the component that wants
+  // to get the posts as well as "getPosts"
   getPosts(postsPerPage: number, currentPage: number) {
     const queryParams = `?pagesize=${postsPerPage}&page=${currentPage}`;
     this.http
