@@ -15,6 +15,8 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   // the api returns an observable
+  // returning an "Observable" is like saying it returns a
+  // promise with an array of "Post"
   getPosts() : Observable<Post[]> {
     return this.http.get<Post[]>(this.postsUrl);
   }
