@@ -24,6 +24,7 @@ import {UserService} from './user.service';
 import {HttpClientModule} from '@angular/common/http';
 import {AdminService} from './admin.service';
 import {BsDatepickerModule} from 'ngx-bootstrap';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -51,6 +52,7 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
       DialogOverviewExampleDialog
   ], entryComponents: [DialogOverviewExampleDialog], // since we use it in "main-page"
   imports: [
+      MatSnackBarModule,
       HttpClientModule,
       MatDialogModule,
       BsDatepickerModule.forRoot(),
