@@ -26,18 +26,6 @@ import {AdminService} from './admin.service';
 import {BsDatepickerModule} from 'ngx-bootstrap';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-
-
-
-
-
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
