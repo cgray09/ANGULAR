@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: "create", component: PostCreateComponent, canActivate: [AuthGuard] },
   { path: "edit/:postId", component: PostCreateComponent, canActivate: [AuthGuard] },
   { path: "auth", loadChildren: () => import('src/app/auth/auth.module').then(m => m.AuthModule) } // lazing loading these routes
+                                                                                                   // must also add "module": "es2020" to tsconfig.app.json
 ];
 
 @NgModule({
