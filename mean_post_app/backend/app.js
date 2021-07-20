@@ -31,6 +31,7 @@ app.use("/images", express.static(path.join(__dirname, "images"))); // allows us
                                                                     // directs all routes to images to
                                                                     // backend/images which is hidden
                                                                     // w/o it
+// for deployment
 app.use("/", express.static(path.join(__dirname, "angular")));
 
 // app.use((req, res, next) => {
@@ -48,6 +49,8 @@ app.use("/", express.static(path.join(__dirname, "angular")));
 
 app.use("/api/posts", postsRoutes);
 app.use("/api/user", userRoutes);
+
+// for deployment
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, "angular", "index.html"));
 });
