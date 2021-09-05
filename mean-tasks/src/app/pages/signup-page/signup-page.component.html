@@ -1,0 +1,37 @@
+<div class="centered-content">
+  <div class="white-box">
+
+    <h1 class="title has-text-primary">Sign up</h1>
+    <form (submit)="onSignupButtonClicked(loginForm)" #loginForm="ngForm">
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input matInput name="email" ngModel type="email" class="input has-background-light" placeholder="E-Mail" #emailInput="ngModel" required email>
+          <mat-error *ngIf="emailInput.invalid && emailInput.touched">Please enter a valid email.</mat-error>
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input type="password" class="input has-background-light" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" minlength="8" required>
+          <mat-error *ngIf="passwordInput.invalid && passwordInput.touched">Please enter a password with minimum length of 8 characters.</mat-error>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field" style="display: flex; justify-content: flex-end;">
+        <p class="control">
+          <button class="button is-success has-text-white" type="submit">
+            Sign up
+          </button>
+        </p>
+      </div>
+    </form>
+    <br>
+
+    <p class="has-text-grey">Already got an account? <a routerLink="/login">Login</a> now!</p>
+
+  </div>
+</div>
