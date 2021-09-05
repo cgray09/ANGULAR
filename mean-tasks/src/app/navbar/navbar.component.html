@@ -1,0 +1,24 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item move">
+        <h1 class="text-style">TaskManager</h1>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a *ngIf="!userIsAuthenticated" routerLink="/signup" class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a *ngIf="!userIsAuthenticated" routerLink="/login" class="button is-light">
+              Log in
+            </a>
+            <button *ngIf="userIsAuthenticated" (click)="onLogout()" class="button is-light">
+              Log out
+            </button >
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
