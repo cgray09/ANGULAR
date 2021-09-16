@@ -1,0 +1,22 @@
+<mat-toolbar *ngIf="nav.visible" color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon  >menu</mat-icon>
+        </button>
+        <a mat-button [routerLink]="'/'" >Home</a>
+        <!-- <a mat-button [routerLink]="'/courses'">Courses</a> -->
+        <a mat-button *ngIf="!userIsAuthenticated"  [routerLink]="'/login'">Login</a>
+        <a mat-button *ngIf="!userIsAuthenticated"  [routerLink]="'/signup'">Sign Up</a>
+        <a mat-button *ngIf="userIsAuthenticated" [matMenuTriggerFor]="Menu" ><i class="material-icons">
+            account_circle
+        </i></a>
+        <mat-menu #Menu="matMenu" >
+            <button mat-menu-item [routerLink]="'/my-orders'">Orders</button>
+            <button mat-menu-item *ngIf="user && user.isAdmin" [routerLink]="'/admin-courses'" >Admin courses</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
+
+        <!-- <a mat-button [routerLink]="'/about'">About</a> -->
+        <a mat-button (click)="recapShopping()"><span class='shopping-course'>{{nbrShoppingCourse}}</span>  <i class="material-icons"> add_shopping_cart</i></a>
+      </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,17 @@
+.example-card {
+    width: 1500px;
+}
+
+.container {
+    padding-bottom: 200px;
+}
+
+table {
+    width: 1532px;
+}
+
+.mat-card-image {
+    width: 200px;
+    height: 25%;
+    padding: 50px 50px;
+}
