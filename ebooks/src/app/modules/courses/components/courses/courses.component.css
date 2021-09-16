@@ -1,0 +1,52 @@
+.example-card {
+    width: 660px;
+    height: 600px;
+  }
+  mat-card
+  {
+      margin: 2%;
+  }
+  mat-card img{
+    object-fit: cover; /*this makes de image in src fit to the size of specified below*/
+    width: 80%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+    height: 50%;
+  }
+  .description {
+      font: 1em sans-serif;
+      font-size:large;
+  }
+
+  .mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 2px 2px 2px 2px rgb(212, 19, 19), 
+                2px 2px 2px 2px rgba(212, 19, 19), 
+                2px 2px 2px 2px rgba(212, 19, 19);
+}
+
+.cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  /* Column Gap */
+  .cardList > * {
+    box-sizing: border-box;
+  }
+  .cardList > *:not(:last-child) {
+    margin-right: 20px;
+  }
+  /* Item sizing */
+  .cardListItem {
+    flex: 0 1 calc(30% - 20px);
+  }
+  .price
+  {
+    font-size: medium;
+    font-weight: bold; 
+  }
+
+  mat-tab-group {
+    height: 450px;
+  }
+
+  

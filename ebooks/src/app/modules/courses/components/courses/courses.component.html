@@ -1,0 +1,34 @@
+
+<mat-tab-group>
+        <mat-tab *ngFor="let categorie of categories" [label]="categorie.label">
+                <div class="cardList">
+                        <ng-container *ngFor="let course of getCoursesByCategorie(categorie.key)">
+                                <mat-card class="cardListItem example-card">
+                                        <mat-card-header>
+                                                <div mat-card-avatar class="example-header-image"></div>
+                                                <mat-card-title>{{course.title}}</mat-card-title>
+                                        </mat-card-header>
+                                        <img mat-card-image [src]="course.urlImage">
+                                        <mat-card-content>
+                                                <p class="description">
+                                                        {{course.description}}
+                                                </p>
+                                        <span fxLayoutAlign="center center"  class="price">{{course.price | currency}}</span>
+                                        </mat-card-content>
+                                        <mat-card-actions fxLayout="row" fxLayoutAlign="center center" *ngIf="!existCourseInShoppingCart(course.key) && !ExistCoursesById(course.key)">
+                                                <button fxFlex mat-flat-button color="primary" (click)="AddToCart(course)">Add EBook</button>
+                                        </mat-card-actions>
+                                        <mat-card-actions fxLayout="row" fxLayoutAlign="center center" *ngIf="existCourseInShoppingCart(course.key) && !ExistCoursesById(course.key)">
+                                                        <button fxFlex mat-flat-button color="warn" (click)="DeleteToCart(course)">Delete EBook</button>
+                                        </mat-card-actions>
+
+                                        <mat-card-actions fxLayout="row" fxLayoutAlign="center center" *ngIf="ExistCoursesById(course.key)">
+                                                <button fxFlex mat-flat-button color="accent" (click)="AccessCourse(course.key)">Access Course</button>
+                                </mat-card-actions>
+
+                                </mat-card>
+                        </ng-container>
+                </div>
+        </mat-tab>
+
+</mat-tab-group>
