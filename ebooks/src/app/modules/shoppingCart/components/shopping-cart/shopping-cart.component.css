@@ -1,0 +1,13 @@
+table{
+    width:100%;
+}
+
+.mat-card-image {
+    width: 200px;
+    height: 25%;
+    padding: 50px 50px;
+}
+
+.container {
+    padding-bottom: 200px;
+}
