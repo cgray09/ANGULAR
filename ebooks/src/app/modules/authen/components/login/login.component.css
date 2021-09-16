@@ -1,0 +1,41 @@
+mat-form-field {
+    width: 300px;
+  }
+  
+  section {
+    padding-top: 100px;
+  }
+
+  .centered-content {
+    display: flex;
+    flex-direction: column;     
+    align-items: center;
+    justify-content: center;
+  }
+
+  .show {
+    display: block;
+    padding-top: 5px;
+  }
+
+  .btn-look {
+    background: #4169E1;
+    color: white;
+    width: 285px;
+  }
+
+  .fix {
+    width: 275px;
+  }
+
+  .size {
+    width: 275px;
+    height: 20px;
+  }
+
+  .has-text-grey {
+    display: flex;
+    flex-direction: column;     
+    align-items: center;
+    justify-content: center;
+  }

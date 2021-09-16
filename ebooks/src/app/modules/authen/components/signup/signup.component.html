@@ -1,0 +1,46 @@
+<div class="centered-content">
+  <div class="white-box">
+
+    <h1 class="title has-text-primary has-text-grey">Sign Up</h1>
+    <form (submit)="onSubmit(loginForm)" #loginForm="ngForm">
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input matInput name="email" ngModel type="email" class="size input has-background-light" placeholder="Email" #emailInput="ngModel" required email>
+          <mat-error class="show fix" *ngIf="emailInput.invalid && emailInput.touched">Please enter a valid email.</mat-error>
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input type="password" class="input has-background-light size" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" minlength="6" required>
+          <mat-error class="show fix" *ngIf="passwordInput.invalid && passwordInput.touched">Please enter a password with minimum length of 6 characters.</mat-error>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input type="password" class="input has-background-light size" name="confirmPassword" ngModel matInput placeholder="Confirm Password" #confirmInput="ngModel" minlength="6" required>
+          <mat-error class="show fix" *ngIf="confirmInput.invalid && confirmInput.touched">Please enter a password with minimum length of 6 characters.</mat-error>
+          <mat-error class="show fix" *ngIf="confirmInput.touched && (confirmInput.value != passwordInput.value)">Passwords do not match.</mat-error>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field" style="display: flex; ">
+        <p class="control">
+          <button fxFlex mat-flat-button class="btn-look" type="submit">
+            Sign Up
+          </button>
+        </p>
+      </div>
+    </form>
+
+    <p >Already have an account? <a routerLink="/login">Login</a> now!</p>
+
+  </div>
+</div>
