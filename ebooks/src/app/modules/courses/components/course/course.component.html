@@ -1,0 +1,91 @@
+<mat-card>
+    <mat-card-title>
+        <div *ngIf="!course">Add Course</div>
+        <div *ngIf="course">Update Course</div>
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="regiForm" (ngSubmit)="onSubmit(regiForm.value)" *ngIf="regiForm" >
+            <table class="table">
+                <tr>
+                    <td>
+                        <mat-form-field class="field">
+                            <input formControlName="Title" matInput name="Title" placeholder="Title">
+                        </mat-form-field>
+                        <mat-error>
+                            <span *ngIf="!regiForm!.get('Title').valid && regiForm!.get('Title').touched">
+                                    Please enter the title !!!
+                            </span>
+                         </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="field">
+                            <textarea  formControlName="Description" matInput name="Description" [matTextareaAutosize] [matAutosizeMinRows]="2"
+                                [matAutosizeMaxRows]="5" placeholder="Description"></textarea>
+                        </mat-form-field>
+                        <mat-error>
+                        <span *ngIf="!regiForm.get('Description').valid && regiForm.get('Description').touched">
+                                Please enter the description !!!
+                        </span>
+                    </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field>
+                            <input type="number" formControlName="Price" matInput placeholder="Price">
+                        </mat-form-field>
+                        <mat-error>
+                            <span *ngIf="!regiForm.get('Price').valid && regiForm.get('Price').touched">
+                                    Please enter the price !!!
+                            </span>
+                        </mat-error>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- <mat-form-field class="field">
+                            <input matInput formControlName="UrlImage" placeholder="UrlImage">
+                        </mat-form-field>
+                        <mat-error>
+                            <span *ngIf="!regiForm.get('UrlImage').valid && regiForm.get('UrlImage').touched">
+                                    Please enter the URL Image !!!
+                            </span>
+                        </mat-error> -->
+                        <div>
+                            <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
+                            <input type="file" #filePicker (change)="onImagePicked($event)">
+                          </div>
+                          <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && regiForm.get('image').valid">
+                            <img [src]="imagePreview" [alt]="regiForm.value.Title">
+                          </div>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <mat-form-field>
+                            <mat-select placeholder="Select Categorie" formControlName="Categorie">
+                                <mat-option>-- Select Any --</mat-option>
+                                <mat-option *ngFor="let categorie of categories" [value]="categorie.key">{{categorie.label}}</mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                        <mat-error>
+                                <span *ngIf="!regiForm.get('Categorie').valid && regiForm.get('Categorie').touched">
+                                        Please enter the categorie Image !!!
+                                </span>
+                        </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                        <td  class="content-center">
+                            <button mat-raised-button [disabled]="!regiForm.valid" color="accent">Submit</button>
+                        </td>
+                    </tr>
+            </table>
+        </form>
+    </mat-card-content>
+</mat-card>
