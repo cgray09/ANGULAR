@@ -1,0 +1,23 @@
+
+table {
+    width: 100%;
+}
+
+.mat-elevation-z8 {
+    max-width: 60%;
+    margin: 70px auto auto auto;
+}
+
+.info-text {
+    text-align: center;
+    font-size: 50px;
+}
+
+p {
+    padding-top: 200px;
+}
+
+mat-spinner {
+    margin: auto;
+    margin-top: 200px;
+}

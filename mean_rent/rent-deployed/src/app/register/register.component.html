@@ -1,0 +1,33 @@
+<div style="height: calc(100vh - 150px); overflow: hidden">
+  <mat-card>
+
+    <form (submit)="onRegister(registerform)" #registerform="ngForm">
+
+      <mat-form-field>
+        <input matInput
+               placeholder="Email"
+               name="email"
+               required
+               email
+               #emailInput="ngModel"
+               ngModel>
+        <mat-error *ngIf="emailInput.invalid">Please give a valid email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+           type="password"
+           placeholder="Password"
+           name="password"
+           required
+           minlength="6"
+           #passwordInput="ngModel"
+           ngModel>
+      <mat-error *ngIf="passwordInput.invalid" >Please enter a password with minimum length of 6 characters.</mat-error>
+      </mat-form-field>
+
+      <button [disabled]="passwordInput.invalid || emailInput.invalid" class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+  </mat-card>
+</div>

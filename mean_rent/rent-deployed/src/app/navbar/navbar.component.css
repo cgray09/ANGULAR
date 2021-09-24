@@ -1,0 +1,21 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+a:hover {
+    color:red;
+}
+
+mat-nav-list {
+    padding-top: 25px;
+}
+
+mat-toolbar {
+    background: #964B00;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
