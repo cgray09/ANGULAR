@@ -16,6 +16,7 @@ const routes: Routes = [
     children: [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeEditComponent },
+      // routes with paramaters must come last
       {
         path: ':id',
         component: RecipeDetailComponent,
