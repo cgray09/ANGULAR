@@ -16,7 +16,7 @@ export class AuthInterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     return this.authService.user.pipe(
-      take(1),
+      take(1), // take(1) is how you subscribe/listen to the subject and get one user w/o having to close the listener after w/ ngOnDestroy()
       exhaustMap(user => {
         if (!user) {
           return next.handle(req);
