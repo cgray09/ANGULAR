@@ -32,7 +32,7 @@ export function shoppingListReducer(
       const ingredient = state.ingredients[state.editedIngredientIndex];
       const updatedIngredient = {
         ...ingredient,
-        ...action.payload
+        ...action.payload // This overwrites ...ingredient but keeps everything in ...ingredient that is not in ...action.payload.
       };
       const updatedIngredients = [...state.ingredients];
       updatedIngredients[state.editedIngredientIndex] = updatedIngredient;
