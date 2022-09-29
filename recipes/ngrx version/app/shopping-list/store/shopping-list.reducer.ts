@@ -26,7 +26,7 @@ export function shoppingListReducer(
     case ShoppingListActions.ADD_INGREDIENTS:
       return {
         ...state,
-        ingredients: [...state.ingredients, ...action.payload]
+        ingredients: [...state.ingredients, ...action.payload] // ... in ...action.payload pulls the elements out of the array since action.payload is an array.
       };
     case ShoppingListActions.UPDATE_INGREDIENT:
       const ingredient = state.ingredients[state.editedIngredientIndex];
