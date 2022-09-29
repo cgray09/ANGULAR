@@ -6,6 +6,7 @@
       <a
         class="list-group-item"
         style="cursor: pointer"
+         // (ingredients | async).ingredients; subscribes to the observable for us and manages the subscription.
         *ngFor="let ingredient of (ingredients | async).ingredients; let i = index"
         (click)="onEditItem(i)"
       >
