@@ -15,7 +15,7 @@ const initialState: State = {
 
 export function shoppingListReducer(
   state: State = initialState,
-  action: ShoppingListActions.ShoppingListActions
+  action: ShoppingListActions.ShoppingListActions // Refers to the union at the bottom of the actions file.
 ) {
   switch (action.type) {
     case ShoppingListActions.ADD_INGREDIENT:
