@@ -14,7 +14,7 @@ const routes: Routes = [
     component: RecipesComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', component: RecipeStartComponent },
+      { path: '', component: RecipeStartComponent }, // Path must be empty when using lazy loading.
       { path: 'new', component: RecipeEditComponent },
       // routes with paramaters must come last
       {
