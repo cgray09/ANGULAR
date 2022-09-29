@@ -56,7 +56,8 @@ export function shoppingListReducer(
       return {
         ...state,
         editedIngredientIndex: action.payload,
-        editedIngredient: { ...state.ingredients[action.payload] }
+        editedIngredient: { ...state.ingredients[action.payload] } // Had to do it this way w/ { ... } so we wouldn't be editing the state value directly
+                                                                   // for immutability purposes.
       };
     case ShoppingListActions.STOP_EDIT:
       return {
