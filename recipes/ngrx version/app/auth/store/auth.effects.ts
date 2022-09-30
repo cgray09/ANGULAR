@@ -60,7 +60,7 @@ const handleError = (errorRes: any) => {
 @Injectable()
 export class AuthEffects {
   @Effect()
-  authSignup = this.actions$.pipe(
+  authSignup = this.actions$.pipe( // actions$ is an observable but we dont need to subscribe, @ngrx/effects does it for us so we just use pipe.
     ofType(AuthActions.SIGNUP_START),
     switchMap((signupAction: AuthActions.SignupStart) => {
       return this.http
