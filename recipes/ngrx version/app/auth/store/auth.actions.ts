@@ -22,6 +22,11 @@ export class AuthenticateSuccess implements Action {
   ) {}
 }
 
+// ****************************************************** 
+// There is no dispatch in any of these actions 
+// bc the effects automatically runs when they are called.
+// ******************************************************
+
 export class Logout implements Action {
   readonly type = LOGOUT;
 }
