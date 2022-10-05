@@ -29,7 +29,7 @@ export class RecipeDetailComponent implements OnInit {
         map(params => {
           return +params['id'];
         }),
-        switchMap(id => {
+        switchMap(id => { // switchMap to change from params observable to store observable.
           this.id = id;
           return this.store.select('recipes');
         }),
