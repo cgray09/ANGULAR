@@ -179,7 +179,7 @@ export class AuthEffects {
     })
   );
 
-  @Effect({ dispatch: false })
+  @Effect({ dispatch: false }) // To tell ngrx that we wont be returning an action.
   authLogout = this.actions$.pipe(
     ofType(AuthActions.LOGOUT),
     tap(() => {
