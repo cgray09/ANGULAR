@@ -41,7 +41,7 @@ const handleAuthentication = (
 const handleError = (errorRes: any) => {
   let errorMessage = 'An unknown error occurred!';
   if (!errorRes.error || !errorRes.error.error) {
-    return of(new AuthActions.AuthenticateFail(errorMessage));
+    return of(new AuthActions.AuthenticateFail(errorMessage)); // of() used to return an observable.
   }
   switch (errorRes.error.error.message) {
     case 'EMAIL_EXISTS':
