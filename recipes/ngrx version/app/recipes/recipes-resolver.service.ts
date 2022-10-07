@@ -30,7 +30,7 @@ export class RecipesResolverService implements Resolve<Recipe[]> {
       switchMap(recipes => {
         if (recipes.length === 0) {
           this.store.dispatch(new RecipesActions.FetchRecipes());
-          return this.actions$.pipe(
+          return this.actions$.pipe( // This is a listener and it is here to tell us when FetchRecipes() is finished.
             ofType(RecipesActions.SET_RECIPES),
             take(1)
           );
