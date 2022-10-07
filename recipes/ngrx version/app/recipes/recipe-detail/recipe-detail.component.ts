@@ -24,7 +24,7 @@ export class RecipeDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params
+    this.route.params // Angular unsubscribes the params obervable for us so we dont need to the destroy method to unsubscribe.
       .pipe(
         map(params => {
           return +params['id'];
