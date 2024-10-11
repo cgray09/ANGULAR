@@ -5,3 +5,22 @@
 .app-clickable {
     cursor: pointer;
 }
+
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 15px; /* Space between columns and rows */
+    padding: 15px; /* Optional padding for the container */
+}
+
+.card {
+    margin: 0; /* Remove margins if using grid gap for spacing */
+    border: 1px solid lightgrey; /* Add light grey border */
+    border-radius: 5px; /* Optional: Add rounded corners if desired */
+    padding: 0 15px; /* If needed for inner spacing */
+    background-color: #3b4b60; /* Ensure the card background color is set if needed */
+}
+
+.alert-info {
+    background-color: #3b4b60;
+}
