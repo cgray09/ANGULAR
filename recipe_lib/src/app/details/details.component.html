@@ -1,0 +1,18 @@
+<div class="container" *ngIf="details != undefined && steps != undefined">
+    <h1>{{details.title}}</h1>
+    <img [src]="details.image" alt="image">
+
+    <div class="section-container">
+        <h2>Ingredients:</h2>
+        <ul>
+            <li *ngFor="let ing of details.extendedIngredients">{{ing.name}}</li>
+        </ul>
+    </div>
+
+    <div class="section-container">
+        <h2>Steps:</h2>
+        <ul>
+            <li *ngFor="let step of steps">{{step.step}}</li>
+        </ul>
+    </div>
+</div>

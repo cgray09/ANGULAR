@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;  /* Make the navbar transparent */
+  padding: 1rem;
+
+  position: fixed;  /* Keeps the navbar fixed to the top of the page */
+  top: 0;           /* Aligns the navbar to the top */
+  left: 0;          /* Ensures it starts from the left edge */
+  width: 100%;      /* Takes the full width of the viewport */
+  z-index: 1000;    /* Ensures the navbar stays above other elements */
+}
+
+  
+  .navbar-brand {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 1000;
+  }
+  
+  /* .navbar-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar-links li {
+    margin-left: 1rem;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .navbar-links a:hover {
+    text-decoration: underline;
+  } */
+  

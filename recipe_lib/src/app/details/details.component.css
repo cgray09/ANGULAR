@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;  /* Ensure the container covers the full viewport height */
+    align-items: center;
+    background-image: url('../../assets/homebg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;  /* Ensures the background image covers the entire container */
+    background-attachment: fixed;  /* Keeps the background image fixed while content scrolls */
+    padding: 60px;
+    box-sizing: border-box;
+    overflow-x: hidden;  /* Prevent horizontal scrolling */
+}
+
+h1{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+h2{
+    margin-top: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+img {
+    max-width: 90%;
+    height: auto;
+}
+
+ul {
+    max-width: 90%;  /* Ensure list elements stay within container bounds */
+}
+
+li {
+    font-size: 20px;
+    line-height: 1.5em;  /* Add line spacing for better readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-container {
+    background-color: rgba(255, 255, 255, 0.8);  /* Semi-transparent white background */
+    padding: 20px 30px;  /* Add top-bottom and left-right padding */
+    border-radius: 8px;  /* Rounded corners for a softer look */
+    max-width: 90%;
+    margin: 20px 0;
+    box-sizing: border-box;  /* Ensure padding is included in width calculation */
+}
+
+
