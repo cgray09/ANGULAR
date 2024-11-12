@@ -1,0 +1,42 @@
+<div class="global" style="display: flex; align-items: flex-start;">
+    <!-- Product Image -->
+    <div>
+        <img [src]="item?.image" style="max-height:450px; max-width:450px">
+    </div>
+
+    <!-- Product Information Table -->
+    <div style="margin-left: 20px;">
+        <table class="table">
+            <tr class="header-row">
+                <th style="vertical-align: top; text-align: left;">Name</th>
+            </tr>
+            <tr class="details-row">
+                <td style="vertical-align: top; text-align: left; padding-bottom: 15px;">
+                    <div>{{item?.name}}</div>
+                </td>
+            </tr>
+            <tr class="header-row">
+                <th style="vertical-align: top; text-align: left;">Description</th>
+            </tr>
+            <tr class="details-row">
+                <td style="vertical-align: top; text-align: left; padding-bottom: 15px;">
+                    <div>{{item?.description}}</div>
+                </td>
+            </tr>
+            <tr class="header-row">
+                <th style="vertical-align: top; text-align: left;">Price</th>
+            </tr>
+            <tr class="details-row">
+                <td style="vertical-align: top; text-align: left; padding-bottom: 15px;">
+                    <div>${{item?.price}}</div>
+                </td>
+            </tr>
+        </table>
+        <button mat-flat-button color="accent" (click)="addToCart()">Add To Cart</button>
+    </div>
+
+    <!-- Logo -->
+    <div class="fox-head" style="margin-left: 20px;">
+        <img src="assets/images/fighting-head-fox-logo.png" width="400px" height="400px">
+    </div>
+</div>

@@ -1,0 +1,37 @@
+button {
+    margin:10px;
+}
+
+table tr {
+    width:200px;
+    text-align: center;
+}
+
+th td {
+    text-align: center;
+}
+
+div .fox-head {
+    text-align: center;
+    margin-left:100px;
+    animation:backInRight;
+    animation-duration: 3s;
+}
+
+.global {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* This will add spacing between image, table, and logo */
+    margin: 50px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
