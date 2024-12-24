@@ -1,0 +1,70 @@
+<div class="form-container">
+    <form #registerForm="ngForm" (ngSubmit)="onRegister()" class="quote-form">
+      <!-- Email Field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="email"
+          name="email"
+          placeholder="Enter Email"
+          [(ngModel)]="email"
+          required
+          #emailField="ngModel"
+        />
+        <mat-error *ngIf="emailField.invalid && (emailField.touched || emailField.dirty)">
+          Please Enter a Valid Email
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Password Field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          name="password"
+          placeholder="Enter Password"
+          [(ngModel)]="password"
+          required
+          #passwordField="ngModel"
+        />
+        <mat-error *ngIf="passwordField.invalid && (passwordField.touched || passwordField.dirty)">
+          Please Enter a Password
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Confirm Password Field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          type="password"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          [(ngModel)]="confirmPassword"
+          required
+          #confirmPasswordField="ngModel"
+        />
+        <mat-error
+          *ngIf="confirmPasswordField.invalid && (confirmPasswordField.touched || confirmPasswordField.dirty)"
+        >
+          Please Confirm Your Password
+        </mat-error>
+        <mat-error *ngIf="password !== confirmPassword && confirmPasswordField.touched">
+          Passwords do not match
+        </mat-error>
+      </mat-form-field>
+  
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="!registerForm.valid || password !== confirmPassword"
+      >
+        Register
+      </button>
+    </form>
+  </div>
+  

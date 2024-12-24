@@ -1,0 +1,51 @@
+<!-- Create Quote Button: Disabled if not authenticated -->
+<button
+  mat-button
+  color="primary"
+  class="create-quote"
+  [routerLink]="['/edit']"
+  [disabled]="!AuthService.isAuthenticated()"
+>
+  <mat-icon>note_add</mat-icon>Create Quote
+</button>
+
+<!-- Spinner: Displayed while loading -->
+<div *ngIf="loading" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<!-- Quotes List: Displayed when not loading -->
+<div *ngIf="!loading">
+  <mat-card class="quotes-card" *ngFor="let quote of quotes | async">
+    <mat-card-header>
+      <div mat-card-avatar class="avatar" [ngStyle]="getRandomColor()">
+        <span>{{ quote.author.split('')[0] }}</span>
+      </div>
+      <mat-card-title>{{ quote.author }}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{ quote.title }}</p>
+    </mat-card-content>
+
+    <!-- Edit and Delete Buttons: Disabled if not authenticated or not the owner -->
+    <mat-card-actions class="quotes-action">
+      <button
+        mat-button
+        color="primary"
+        [routerLink]="['/edit', quote._id]"
+        [disabled]="!AuthService.isAuthenticated() || !isQuoteOwner(quote.authorId)"
+      >
+        Edit
+      </button>
+      <button
+        mat-button
+        color="warn"
+        (click)="onDelete(quote._id)"
+        [disabled]="!AuthService.isAuthenticated() || !isQuoteOwner(quote.authorId)"
+      >
+        Delete
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

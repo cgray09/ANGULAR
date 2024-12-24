@@ -1,0 +1,30 @@
+.form-container {
+  margin-top: 4rem; /* Space from the navbar */
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Spacing between form fields */
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.register-container {
+  margin-top: 1.5rem;
+  text-align: center;
+
+  p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+}

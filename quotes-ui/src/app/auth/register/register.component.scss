@@ -1,0 +1,16 @@
+.form-container {
+    margin-top: 4rem; /* Space from the navbar */
+  }
+  
+  .quote-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Spacing between form fields */
+    max-width: 400px;
+    margin: 0 auto; /* Center the form */
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  

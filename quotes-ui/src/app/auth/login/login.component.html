@@ -1,0 +1,59 @@
+<div class="form-container">
+  <form #loginForm="ngForm" (ngSubmit)="onLogin()" class="quote-form">
+    <!-- Email Field -->
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        name="email"
+        placeholder="Enter Email"
+        [(ngModel)]="email"
+        required
+        #emailField="ngModel"
+      />
+      <mat-error *ngIf="emailField.invalid && (emailField.touched || emailField.dirty)">
+        Please Enter a Valid Email
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Password Field -->
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        name="password"
+        placeholder="Enter Password"
+        [(ngModel)]="password"
+        required
+        #passwordField="ngModel"
+      />
+      <mat-error *ngIf="passwordField.invalid && (passwordField.touched || passwordField.dirty)">
+        Please Enter Your Password
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Login Button -->
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="!loginForm.valid"
+    >
+      Login
+    </button>
+  </form>
+
+  <!-- Register Navigation Button -->
+  <div class="register-container">
+    <p>Don't have an account?</p>
+    <button
+      mat-flat-button
+      color="accent"
+      (click)="goToRegister()"
+    >
+      Register
+    </button>
+  </div>
+</div>

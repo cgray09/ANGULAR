@@ -1,0 +1,20 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.active {
+  background: #344397;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar-title {
+  cursor: pointer; /* Makes the cursor change to a pointer */
+  color: white; /* Optional: To ensure visibility */
+  text-decoration: none; /* Removes any text underline if added by default */
+}

@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="toolbar">
+    <!-- App Title -->
+    <span [routerLink]="['/']" class="navbar-title">Quotes</span>
+
+    <!-- Conditional Button for Sign In/Sign Out -->
+    <button
+      mat-button
+      *ngIf="!authService.isAuthenticated(); else loggedIn"
+      [routerLink]="['/login']"
+      routerLinkActive="active"
+    >
+      Sign In
+    </button>
+
+    <ng-template #loggedIn>
+      <button mat-button (click)="onLogout()">
+        Sign Out
+      </button>
+    </ng-template>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- Content Router Outlet -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
