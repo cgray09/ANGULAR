@@ -1,0 +1,14 @@
+<mat-form-field>
+  <mat-label>Get weather for:</mat-label>
+  <input type="text" placeholder="Search" matInput [formControl]="weatherLocationControl" [matAutocomplete]="auto"/>
+  <mat-autocomplete #auto="matAutocomplete">
+    @for (locationOption of filteredLocationOptions(); track $index) {
+    <mat-option (click)="setSelectedCity(locationOption)" [value]="locationOption.name + ' - ' + locationOption.country">
+      {{locationOption.name + ' - ' + locationOption.country}}
+    </mat-option>
+  }
+  </mat-autocomplete>
+  <button mat-icon-button matSuffix color="primary" [disabled]="!selectedCity()" (click)="addCityToWeatherForecast($event)">
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-form-field>

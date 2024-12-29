@@ -1,0 +1,9 @@
+:host{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .weather-card-bg{
+        background: linear-gradient(0deg, #F27BB8, #585DF3);
+    }
+}

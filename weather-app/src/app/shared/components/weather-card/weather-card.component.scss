@@ -1,0 +1,11 @@
+.weather-card-wrapper{
+    border-radius: 30px;
+    min-width: 400px;
+    overflow: hidden;
+    background: linear-gradient(0deg, #3B0D54 0%, #4642a1 100%);
+
+    .footer{
+        background-color: #615bda;
+        flex: 0px 1 0;
+    }
+}

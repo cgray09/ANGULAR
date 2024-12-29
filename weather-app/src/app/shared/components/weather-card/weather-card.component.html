@@ -1,0 +1,24 @@
+<div class="d-flex flex-column weather-card-wrapper">
+  <app-weather-card-header class="m-4" [weatherToday]="weatherData().weatherData[0]" [location]="weatherData().location" (deleteWeatherCard)="removeWeatherCard()"></app-weather-card-header>
+  <div class="footer p-4">
+    @defer(when weatherFutureForecast().length > 1){
+    <app-weather-card-forecast [weatherCardForecastDayForecast]="weatherFutureForecast()"></app-weather-card-forecast>
+  } @loading (minimum 4s) {
+    Loading
+  }
+  @error {
+    Error
+  }
+  @placeholder {
+    <div class="d-flex pt-3 justify-content-center align-items-center m-4">
+      <button
+      class="d-flex bg-transparent border-0 text-white"
+      (click)="addFutureForecast()"
+    >
+      <mat-icon>add</mat-icon>
+      <mat-icon>date_range</mat-icon>
+    </button>
+    </div>
+  }
+  </div>
+</div>

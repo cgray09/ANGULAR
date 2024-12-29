@@ -1,0 +1,28 @@
+<app-main-header></app-main-header>
+<div
+  class="weather-card-bg flex-fill d-flex gap-3 justify-content-center align-items-center flex-wrap"
+>
+  <app-location-search></app-location-search>
+  @defer(on viewport){ 
+      @for (location of forecastWeatherLocations(); track $index) {
+    <app-weather-card
+      [weatherKey]="location"
+      (deleteWeatherCard)="deleteWeatherCard($event)"
+      (loadWeekForecast)="loadForecastForLocation($event)"
+    ></app-weather-card>
+    } 
+  } @placeholder {
+    <div
+      style="
+        height: 300px;
+        width: 300px;
+        background: lightblue;
+        border-radius: 20px;
+        cursor: pointer;
+      "
+      class="d-flex justify-content-center align-items-center"
+    >
+      Placeholder
+    </div>
+  }
+</div>

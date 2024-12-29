@@ -1,0 +1,41 @@
+<div class="d-flex flex-fill z-1">
+  <div
+    class="text-white d-flex gap-2 flex-column justify-content-center align-items-center flex-50"
+  >
+    <div class="location">{{ location().name }}</div>
+    <div class="location-row-divider"></div>
+    <div class="h6">{{ location().country }}</div>
+  </div>
+  <div
+    class="d-flex flex-column gap-2 flex-fill align-items-center justify-content-center"
+  >
+    <div class="text-white temperature d-flex gap-2">
+      <span>{{ viewWeatherData().temperature }}</span>
+      <div
+        [style.background-image]="'url(' + weatherIcon() + ')'"
+        class="weather-icon"
+      ></div>
+    </div>
+    <span class="text-white-50-solid text-uppercase letter-spacing-1">
+      {{ viewWeatherData().weatherType }}
+    </span>
+    <div
+      class="d-flex gap-2 w-75 text-white-50-solid text-center align-items-center"
+    >
+      <div class="d-flex flex-column gap-2 flex-50">
+        <div class="text-uppercase letter-spacing-1">Humidity</div>
+        <div class=""> {{ viewWeatherData().humidity }}</div>
+      </div>
+      <div class="column-divider"></div>
+      <div class="d-flex flex-column gap-2 flex-50">
+        <div class="text-uppercase letter-spacing-1">Wind</div>
+        <div class="">{{ viewWeatherData().wind }}</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button mat-icon-button color="primary" class="white-color" (click)="deleteWeatherCardClicked()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>
